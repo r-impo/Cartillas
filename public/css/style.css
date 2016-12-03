@@ -1,0 +1,131 @@
+/*HOME CSS*/
+.navbar {
+    margin-bottom: 0;
+}
+
+.section-form {
+		padding-top: 1em;
+}
+
+.home-titulo {
+    color: #f0ad4e;
+    text-shadow: 4px 2px 4px rgba(0, 0, 0, .75);
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.form-elementos {
+    width: 100% !important;
+}
+
+.search-query {
+    padding-left: 29px;
+    background-image: url(http://www.freeiconspng.com/uploads/orange-localization-icon-11.png);
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: 2px;
+}
+
+/*FAQ CSS*/
+.faqItems {
+	font-size: 18px;
+	font-family: 'Lato';
+	font-style: normal;
+	src: local('Lato Bold'), local('Lato-Bold'), url(http://fonts.gstatic.com/s/lato/v11/ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff2);
+}
+
+.faqTitle {
+	font-weight: 600;
+}
+
+.faqBody {
+	font-weight: 300;
+}
+
+.align_glyph {
+	background-color: #f5f5f5;
+	display: flex;
+	align-items: center;
+}
+
+.glyph_icon {
+	margin-left: 15px;
+}
+
+/*FOOTER CSS*/
+
+.footer2 {
+	background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
+	border-radius: 4px;
+}
+
+.zocalo {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+.zocalo p {
+	margin: 0;
+}
+
+.modal-footer2 {
+	padding: 15px;
+	text-align: right;
+	border-top: none;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+#faqTitleModal {
+	text-align: center;
+}
+
+/*
+clases para coverr.co:
+*/
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
