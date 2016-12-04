@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\DB;
 class SearchController extends Controller
 {
     public function getAllUsers($q) {
-      $users = DB::table('users')->where('name', 'like', "%$q%")->pluck('name')->take(6);
-      $especialidad = DB::table('perfils')->where('especialidad', 'like', "%$q%")->pluck('especialidad')->take(2)->unique();
-
-      $resultados = ['users' => $users, 'especialidad' => $especialidad];
+      $users = DB::table('users')
+        ->join('perfils', 'users.id', 'perfils.user_id')
+        ->where('name', 'like', "%$q%")
+        ->orWhere('especialidad', 'like', "%$q%")
+        ->limit(6)
+        ->get();
 
       return $users;
     }

@@ -30,15 +30,15 @@ function showUser(str) {
 }
 
 function showSearchResults(results) {
+  console.log(JSON.parse(results));
   let users = JSON.parse(results);
-
   let target = document.getElementById('resultados');
 
   if (target.innerHTML !== '') {
     target.innerHTML = '';
   }
   for (user of users) {
-    target.innerHTML += ('beforeend', '<div>' + user + '</div>');
+    target.innerHTML += ('beforeend', '<div>' + user.name + " - " + user.especialidad + '</div>');
   }
   $('#resultados_parent').removeClass('hidden');
 }
