@@ -11,7 +11,8 @@ $(document).ready(function() {
 
 function showUser(str) {
     if (str == "") {
-        document.getElementById("search_input").innerHTML = "";
+        document.getElementById("resultados").innerHTML = "";
+        $('#resultados_parent').addClass('hidden');
         return;
     } else {
         if (window.XMLHttpRequest) {
@@ -29,9 +30,15 @@ function showUser(str) {
 }
 
 function showSearchResults(results) {
-  let show = JSON.parse(results);
+  let users = JSON.parse(results);
+
   let target = document.getElementById('resultados');
-  for (user of show) {
-    target.innerHTML += ('beforeend', '<div class="row">' + user + '</div>');
+
+  if (target.innerHTML !== '') {
+    target.innerHTML = '';
   }
+  for (user of users) {
+    target.innerHTML += ('beforeend', '<div>' + user + '</div>');
+  }
+  $('#resultados_parent').removeClass('hidden');
 }

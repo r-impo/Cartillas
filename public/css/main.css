@@ -181,10 +181,12 @@ hr {
     font-size: 23px;
 }
 
-.conainer-resultados {
+.container-resultados {
     top: 70%;
     margin: 0 auto;
     border: solid 1px rgba(255,255,255,.25);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     color: #fff;
     width: 70%;
     background: rgba(255,255,255,.5);
@@ -192,7 +194,7 @@ hr {
     text-align: left;
 }
 
-.conainer-resultados .hidden{
+.container-resultados .hidden{
     display: none;
 }
 
