@@ -32,6 +32,6 @@ function showSearchResults(results) {
   let show = JSON.parse(results);
   let target = document.getElementById('resultados');
   for (user of show) {
-    target.innerHTML = ('afterend', '<div class="row">' + user + '</div>');
+    target.innerHTML += ('beforeend', '<div class="row">' + user + '</div>');
   }
 }
