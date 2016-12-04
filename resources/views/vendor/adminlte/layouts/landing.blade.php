@@ -70,9 +70,9 @@
               <div class="col-md-12">
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
-                        <input type="text" class="form-control input-lg" placeholder="Buscar" />
+                        <input id="search_input" type="text" class="form-control input-lg" placeholder="Buscar" />
                         <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="button">
+                            <button class="btn btn-info btn-lg" type="button" onClick="showUser(this.value)">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
                         </span>
@@ -84,6 +84,19 @@
         </div>
       </div> <!--/ .container -->
     </div><!--/ #headerwrap -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="">Resultados de Busqueda</h1>
+        </div>
+        <div id="resultados">
+
+        </div>
+      </div>
+    </div>
+
+
 
 
     <section id="desc" name="desc"></section>
@@ -269,6 +282,7 @@
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('/js/smoothscroll.js') }}"></script>
 <script src="{{ asset('/js/coverr.js') }}"></script>
+<script src="{{ asset('/js/search.js') }}"></script>
 <script>
     $('.carousel').carousel({
         interval: 3500
