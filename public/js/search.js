@@ -35,17 +35,19 @@ function showSearchResults(results) {
   let users = JSON.parse(results);
   let target = $('#resultados_parent');
 
-  if (target.children().length < 1) {
+  if (target.children().length > 1) {
     target.children().remove();
   }
-  for (user of users) {
-    medico = '<p class="col-xs-4">' + recortar(user.name) + '</p>';
-    especialidad = '<p class="col-xs-4">' + recortar(user.especialidad) + '</p>';
-    direccion = '<p class="col-xs-4">' + recortar(user.direccion) + '</p>';
+  if (users.length > 0) {
+    for (user of users) {
+      medico = '<p class="col-xs-4">' + recortar(user.name) + '</p>';
+      especialidad = '<p class="col-xs-4">' + recortar(user.especialidad) + '</p>';
+      direccion = '<p class="col-xs-4">' + recortar(user.direccion) + '</p>';
 
-    target.append($('<a />', {"class": "row", "href": "/"}).append(medico, especialidad, direccion));
+      target.append($('<a />', {"class": "row", "href": "/"}).append(medico, especialidad, direccion));
+    }
+    $('#resultados_parent').removeClass('hidden');
   }
-  $('#resultados_parent').removeClass('hidden');
 
   function recortar(str) {
     if (str.length > 25) {
