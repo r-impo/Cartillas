@@ -8,9 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
-    public function getUsers(Request $request) {
-      var_dump($request);
-      $users = DB::table('users')->where('name', 'like', $request)->value('name');
+    public function getAllUsers($q) {
+      $users = DB::table('users')->where('name', 'like', "%$q%")->pluck('name');
 
       return $users;
     }

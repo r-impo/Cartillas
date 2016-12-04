@@ -1,16 +1,15 @@
-// window.onload = function() {
-//   let searchBar = document.getElementById('search_input');
-//   let keyDown = searchBar.addEventListener('key')
-// }
-
 $(document).ready(function() {
+  // $('#search_input').keyup(function() {
+  //   showUser($(this).val());
+  // });
   $('#search_input').keyup(function() {
-    showUser($(this).val());
+    clearTimeout($.data(this, 'timer'));
+    var wait = setTimeout(showUser($(this).val()), 500);
+    $(this).data('timer', wait);
   });
 });
 
 function showUser(str) {
-    console.log(str)
     if (str == "") {
         document.getElementById("search_input").innerHTML = "";
         return;
@@ -21,10 +20,18 @@ function showUser(str) {
         }
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("resultados").innerHTML = this.responseText;
+                showSearchResults(this.responseText);
             }
         };
         xmlhttp.open("GET", "search/"+str, true);
         xmlhttp.send();
     }
+}
+
+function showSearchResults(results) {
+  let show = JSON.parse(results);
+  let target = document.getElementById('resultados');
+  for (user of show) {
+    target.innerHTML = ('afterend', '<div class="row">' + user + '</div>');
+  }
 }

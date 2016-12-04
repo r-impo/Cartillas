@@ -96,9 +96,6 @@
       </div>
     </div>
 
-
-
-
     <section id="desc" name="desc"></section>
     <!-- INTRO WRAP -->
     <div id="intro">

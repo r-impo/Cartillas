@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('adminlte::layouts.landing');
 });
 
-Route::get('/search/{query}', 'SearchController@getUsers');
+Route::get('/search/{query}', 'SearchController@getAllUsers');
