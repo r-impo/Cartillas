@@ -32,13 +32,26 @@ function showUser(str) {
 function showSearchResults(results) {
   console.log(JSON.parse(results));
   let users = JSON.parse(results);
-  let target = document.getElementById('resultados');
+  let medico = document.getElementById('resultados_medico');
+  let especialidad = document.getElementById('resultados_especialidad');
+  let direccion = document.getElementById('resultados_direccion');
 
-  if (target.innerHTML !== '') {
-    target.innerHTML = '';
+  if (medico.innerHTML !== '' && especialidad.innerHTML !== '' && direccion.innerHTML !== '') {
+    medico.innerHTML = '';
+    especialidad.innerHTML = '';
+    direccion.innerHTML = '';
   }
   for (user of users) {
-    target.innerHTML += ('beforeend', '<div>' + user.name + " - " + user.especialidad + '</div>');
+    medico.innerHTML += ('beforeend', '<p>' + recortar(user.name) + '</p>');
+    especialidad.innerHTML += ('beforeend', '<p>' + recortar(user.especialidad) + '</p>');
+    direccion.innerHTML += ('beforeend', '<p>' + recortar(user.direccion) + '</p>');
   }
   $('#resultados_parent').removeClass('hidden');
+
+  function recortar(str) {
+    if (str.length > 28) {
+      str = str.substring(0, 28) + "...";
+    }
+    return str;
+  }
 }
