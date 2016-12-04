@@ -142,7 +142,7 @@ hr {
     padding: 3px;
     border: solid 1px rgba(255,255,255,.25);
     border-radius: 6px;
-    width: 70%;
+    width: 80%;
     background: rgba(255,255,255,.5);
     margin: 0 auto;
 }
@@ -193,7 +193,9 @@ hr {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     color: #fff;
-    width: 70%;
+    width: 80%;
+    height: 35vh;
+    overflow-y: scroll;
     background: rgba(255,255,255,.5);
     font-weight: 400;
     text-align: left;
