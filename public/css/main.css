@@ -156,6 +156,11 @@ hr {
     background: transparent;
 }
 
+#custom-search-input input::-webkit-input-placeholder {
+    color: #fff;
+    font-weight: 900;
+}
+
 #custom-search-input button{
     margin: 2px 0 0 0;
     background: none;
@@ -174,6 +179,25 @@ hr {
 
 #custom-search-input .glyphicon-search{
     font-size: 23px;
+}
+
+.conainer-resultados {
+    top: 70%;
+    margin: 0 auto;
+    border: solid 1px rgba(255,255,255,.25);
+    color: #fff;
+    width: 70%;
+    background: rgba(255,255,255,.5);
+    font-weight: 400;
+    text-align: left;
+}
+
+.conainer-resultados .hidden{
+    display: none;
+}
+
+#resultados {
+    width: 100%;
 }
 
 /* intro Wrap */

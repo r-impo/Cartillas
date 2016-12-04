@@ -80,21 +80,17 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="conainer-resultados hidden">
+                  <div id="resultados"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div> <!--/ .container -->
     </div><!--/ #headerwrap -->
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="">Resultados de Busqueda</h1>
-        </div>
-        <div id="resultados">
-
-        </div>
-      </div>
-    </div>
 
     <section id="desc" name="desc"></section>
     <!-- INTRO WRAP -->
