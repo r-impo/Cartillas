@@ -54,49 +54,33 @@
 
     <section id="home" name="home"></section>
     <div id="headerwrap">
+      <div class="video-background">
+          <div class="video-foreground">
+            <iframe src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+
       <div class="container">
         <div class="row centered">
-            <div class="col-md-12">
-                <h1 class="text-center home-titulo ">Buscá tu Médico</h1>
-            </div>
-            <div class="col-md-12">
-                <form class="form-inline text-center">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-3">
-                            <div class="form-group form-elementos">
-                                <select class="form-control form-elementos">
-                                    <option hidden>Privado o por Pregaga </option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-3">
-                            <div class="form-group form-elementos">
-                                <select class="form-control form-elementos">
-                                    <option hidden>Especialista</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-4">
-                            <div class="form-group form-elementos">
-                                <input type="text" class="form-control form-elementos search-query" id="exampleInputEmail2" placeholder="Ingresá Zona, Ciudad o Provincia">
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="form-elementos">
-                                <button type="submit" class="btn btn-warning form-elementos">Buscar</button>
-                            </div>
-                        </div>
+          <div class="col-md-12">
+              <h1 class="text-center home-titulo ">Buscá tu Médico</h1>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control input-lg" placeholder="Buscar" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
                     </div>
-                </form>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </div> <!--/ .container -->
     </div><!--/ #headerwrap -->
