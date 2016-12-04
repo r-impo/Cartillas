@@ -82,11 +82,7 @@
             </div>
             <div class="row">
               <div class="col-md-12">
-                <div id="resultados_parent" class="row container-resultados hidden">
-                  <div class="col-xs-4" id="resultados_medico"></div>
-                  <div class="col-xs-4" id="resultados_especialidad"></div>
-                  <div class="col-xs-4" id="resultados_direccion"></div>
-                </div>
+                <div id="resultados_parent" class="row container-resultados hidden"></div>
               </div>
             </div>
           </div>

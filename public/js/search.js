@@ -11,7 +11,9 @@ $(document).ready(function() {
 
 function showUser(str) {
     if (str == "") {
-        document.getElementById("resultados").innerHTML = "";
+        $('#resultados_medico').html('');
+        $('#resultados_especialidad').html('');
+        $('#resultados_direccion').html('');
         $('#resultados_parent').addClass('hidden');
         return;
     } else {
@@ -30,27 +32,24 @@ function showUser(str) {
 }
 
 function showSearchResults(results) {
-  console.log(JSON.parse(results));
   let users = JSON.parse(results);
-  let medico = document.getElementById('resultados_medico');
-  let especialidad = document.getElementById('resultados_especialidad');
-  let direccion = document.getElementById('resultados_direccion');
+  let target = $('#resultados_parent');
 
-  if (medico.innerHTML !== '' && especialidad.innerHTML !== '' && direccion.innerHTML !== '') {
-    medico.innerHTML = '';
-    especialidad.innerHTML = '';
-    direccion.innerHTML = '';
+  if (target.children().length < 1) {
+    target.children().remove();
   }
   for (user of users) {
-    medico.innerHTML += ('beforeend', '<p>' + recortar(user.name) + '</p>');
-    especialidad.innerHTML += ('beforeend', '<p>' + recortar(user.especialidad) + '</p>');
-    direccion.innerHTML += ('beforeend', '<p>' + recortar(user.direccion) + '</p>');
+    medico = '<p class="col-xs-4">' + recortar(user.name) + '</p>';
+    especialidad = '<p class="col-xs-4">' + recortar(user.especialidad) + '</p>';
+    direccion = '<p class="col-xs-4">' + recortar(user.direccion) + '</p>';
+
+    target.append($('<a />', {"class": "row", "href": "/"}).append(medico, especialidad, direccion));
   }
   $('#resultados_parent').removeClass('hidden');
 
   function recortar(str) {
-    if (str.length > 28) {
-      str = str.substring(0, 28) + "...";
+    if (str.length > 25) {
+      str = str.substring(0, 25) + "...";
     }
     return str;
   }
