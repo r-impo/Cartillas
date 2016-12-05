@@ -43,5 +43,7 @@ $factory->define(App\Perfil::class, function (Faker\Generator $faker) {
         'especialidad' => $especialidad[array_rand($especialidad)],
         'obra_social' => $obra_social[array_rand($obra_social)],
         'direccion' => $faker->address,
+        'localidad' => $faker->city,
+        'provincia' => $faker->state,
     ];
 });

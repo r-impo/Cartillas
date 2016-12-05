@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('adminlte::layouts.landing');
 });
 
-Route::get('/search/{str}', 'SearchController@getAllUsers');
+Route::get('/medicos/{str}', 'SearchController@getAllUsers');
+Route::get('/search/{str}', 'SearchController@getSearchUsers');
+Route::get('/medico/{id}', 'SearchController@getUser');

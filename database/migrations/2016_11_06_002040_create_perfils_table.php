@@ -18,6 +18,8 @@ class CreatePerfilsTable extends Migration
             $table->string('especialidad');
             $table->string('obra_social');
             $table->string('direccion');
+            $table->string('localidad');
+            $table->string('provincia');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });

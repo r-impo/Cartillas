@@ -1,7 +1,4 @@
 $(document).ready(function() {
-  // $('#search_input').keyup(function() {
-  //   showUser($(this).val());
-  // });
   $('#search_input').keyup(function() {
     clearTimeout($.data(this, 'timer'));
     var wait = setTimeout(showUser($(this).val()), 500);
@@ -13,7 +10,7 @@ function showUser(str) {
     if (str == "") {
         $('#resultados_medico').html('');
         $('#resultados_especialidad').html('');
-        $('#resultados_direccion').html('');
+        $('#resultados_localidad').html('');
         $('#resultados_parent').addClass('hidden');
         return;
     } else {
@@ -33,6 +30,7 @@ function showUser(str) {
 
 function showSearchResults(results) {
   let users = JSON.parse(results);
+  console.log(users);
   let target = $('#resultados_parent');
 
   if (target.children().length > 1) {
@@ -42,9 +40,10 @@ function showSearchResults(results) {
     for (user of users) {
       medico = '<p class="col-xs-4">' + recortar(user.name) + '</p>';
       especialidad = '<p class="col-xs-4">' + recortar(user.especialidad) + '</p>';
-      direccion = '<p class="col-xs-4">' + recortar(user.direccion) + '</p>';
+      localidad = '<p class="col-xs-4">' + recortar(user.localidad) + '</p>';
 
-      target.append($('<a />', {"class": "row", "href": "/"}).append(medico, especialidad, direccion));
+      target.append($('<a />', {"class": "row", "href": "/medico/" + user.id}).append(medico, especialidad, localidad));
+      target.append('<hr>');
     }
     $('#resultados_parent').removeClass('hidden');
   }
