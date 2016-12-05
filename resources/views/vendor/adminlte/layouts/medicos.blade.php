@@ -9,6 +9,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/searchTabs.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -45,16 +46,84 @@
         </div>
     </div>
 
-    <section id="content" name="contact"></section>
-      <div class="headerwrap">
-        @if ($users)
-          <ul>
-            @foreach ($users as $user)
-              <li><a href="{{ url('/medico') . '/' . $user->id }}">{{ $user->name }}</a></li>
-            @endforeach
-          </ul>
-        @endif
+    <section id="search_bar" name="contact"></section>
+      <div id="headerwrap">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <div id="custom-search-input">
+                  <div class="input-group col-md-12">
+                      <input id="search_input" type="text" class="form-control input-lg" placeholder="Buscar" />
+                      <span class="input-group-btn">
+                          <button class="btn btn-info btn-lg" type="button" href="/medicos">
+                              <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                      </span>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="col-xs-12">
+        <div class="row">
+          <div id="custom-search-filters">
+            <div class="container">
+    	         <ul class="tabs">
+    		        <li class="tab-link current" data-tab="todos">Todos</li>
+    		        <li class="tab-link" data-tab="medicos">Médicos</li>
+    		        <li class="tab-link" data-tab="centro_medico">Centros Médicos</li>
+    	         </ul>
+
+  	           <div id="todos" class="tab-content current">
+                 @if ($users)
+                   <ul>
+                     @foreach ($users as $user)
+                       <li><a href="{{ url('/medico') . '/' . $user->id }}">{{ $user->name }}</a></li>
+                     @endforeach
+                   </ul>
+                 @else
+                    <p>No se encontraron resultados</p>
+                 @endif
+               </div>
+  	           <div id="medicos" class="tab-content">
+                 @if ($users)
+                   <ul>
+                     @foreach ($users as $user)
+                       <li><a href="{{ url('/medico') . '/' . $user->id }}">{{ $user->name }}</a></li>
+                     @endforeach
+                   </ul>
+                 @else
+                    <p>No se encontraron resultados</p>
+                 @endif
+               </div>
+  	           <div id="centro_medico" class="tab-content">
+                 @if (false)
+                   <ul>
+                     @foreach ($centros as $centro)
+                       <li><a href="{{ url('/medico') . '/' . $centro->id }}">{{ $centro->name }}</a></li>
+                     @endforeach
+                   </ul>
+                 @else
+                    <p>No se encontraron resultados</p>
+                 @endif
+               </div>
+            </div><!-- container -->
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="headerwrap">
+
+      </div>
+
+
 
     <section id="contact" name="contact"></section>
     <div id="footerwrap">
@@ -98,8 +167,8 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('/js/smoothscroll.js') }}"></script>
-<script src="{{ asset('/js/coverr.js') }}"></script>
 <script src="{{ asset('/js/search.js') }}"></script>
+<script src="{{ asset('/js/searchTabs.js') }}"></script>
 <script>
     $('.carousel').carousel({
         interval: 3500
