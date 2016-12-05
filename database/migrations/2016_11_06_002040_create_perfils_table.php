@@ -20,6 +20,7 @@ class CreatePerfilsTable extends Migration
             $table->string('direccion');
             $table->string('localidad');
             $table->string('provincia');
+            $table->string('avatar');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });

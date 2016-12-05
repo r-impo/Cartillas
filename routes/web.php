@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/medicos/{str}', 'SearchController@getAllUsers');
 Route::get('/search/{str}', 'SearchController@getSearchUsers');
 Route::get('/medico/{id}', 'SearchController@getUser');
+
+Route::get('/avatar/{id}', 'UserAvatarController@get');
