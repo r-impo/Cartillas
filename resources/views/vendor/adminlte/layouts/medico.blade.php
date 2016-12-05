@@ -45,6 +45,8 @@
         </div>
     </div>
 
+    <section id="content" name="contact"></section>
+
     <section id="contact" name="contact"></section>
     <div id="footerwrap">
         <div class="container">
