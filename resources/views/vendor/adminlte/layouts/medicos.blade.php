@@ -48,9 +48,11 @@
     <section id="content" name="contact"></section>
       <div class="headerwrap">
         @if ($users)
-          @foreach ($users as $user)
-            {{ $user->name }}
-          @endforeach
+          <ul>
+            @foreach ($users as $user)
+              <li><a href="{{ url('/medico') . '/' . $user->id }}">{{ $user->name }}</a></li>
+            @endforeach
+          </ul>
         @endif
       </div>
 
