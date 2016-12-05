@@ -72,7 +72,7 @@
                     <div class="input-group col-md-12">
                         <input id="search_input" type="text" class="form-control input-lg" placeholder="Buscar" />
                         <span class="input-group-btn">
-                            <button class="btn btn-info btn-lg" type="button" onClick="showUser(this.value)">
+                            <button class="btn btn-info btn-lg" type="button" href="/medicos">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
                         </span>

@@ -12,7 +12,7 @@ class SearchController extends Controller
       $users = DB::table('users')
         ->join('perfils', 'users.id', 'perfils.user_id')
         ->where('name', 'like', "%$q%")
-        ->orWhere('localidad', 'like', "%$q%")
+        ->orWhere('especialidad', 'like', "%$q%")
         ->limit(6)
         ->get();
 
@@ -23,7 +23,7 @@ class SearchController extends Controller
       $users = DB::table('users')
         ->join('perfils', 'users.id', 'perfils.user_id')
         ->where('name', 'like', "%$q%")
-        ->orWhere('localidad', 'like', "%$q%")
+        ->orWhere('especialidad', 'like', "%$q%")
         ->get();
 
       return view('adminlte::layouts.medicos', [
@@ -32,13 +32,15 @@ class SearchController extends Controller
     }
 
     public function getUser($q) {
-      $user = DB::table('users')
+      $user = DB::table('users')->find($q);
+
+      $fullPerfil = DB::table('users')
         ->join('perfils', 'users.id', 'perfils.user_id')
-        ->find($q)
+        ->where('users.id', '=', $user->id)
         ->get();
 
         return view('adminlte::layouts.medico', [
-          'user' => $user
+          'user' => $fullPerfil
         ]);
     }
 

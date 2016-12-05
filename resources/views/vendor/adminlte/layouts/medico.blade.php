@@ -46,6 +46,11 @@
     </div>
 
     <section id="content" name="contact"></section>
+      <div class="headerwrap">
+        @if ($user)
+          {{ $user }}
+        @endif
+      </div>
 
     <section id="contact" name="contact"></section>
     <div id="footerwrap">

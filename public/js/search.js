@@ -4,6 +4,11 @@ $(document).ready(function() {
     var wait = setTimeout(showUser($(this).val()), 500);
     $(this).data('timer', wait);
   });
+  $("#search_input").keypress(function(e) {
+    if(e.which == 13 && $("#search_input").is(":focus")) {
+      window.location = '/medicos/' + $(this).val();
+    }
+  });
 });
 
 function showUser(str) {

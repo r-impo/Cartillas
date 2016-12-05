@@ -46,6 +46,13 @@
     </div>
 
     <section id="content" name="contact"></section>
+      <div class="headerwrap">
+        @if ($users)
+          @foreach ($users as $user)
+            {{ $user->name }}
+          @endforeach
+        @endif
+      </div>
 
     <section id="contact" name="contact"></section>
     <div id="footerwrap">
