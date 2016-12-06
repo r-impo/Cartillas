@@ -12,10 +12,14 @@
     <link href="{{ asset('/css/searchTabs.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -34,6 +38,16 @@
                 <a class="navbar-brand" href="/"><b>dondeDuele</b></a>
             </div>
             <div class="navbar-collapse collapse">
+              <div class="col-sm-4 col-md-4">
+                <form class="navbar-form" role="search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Ingresar</a></li>
@@ -46,84 +60,55 @@
         </div>
     </div>
 
-    <section id="search_bar" name="contact"></section>
-      <div id="headerwrap">
+    <div id="medicos-container">
+      <div class="col-xs-12">
+
         <div class="container">
-          <div class="row">
-            <div class="col-md-8">
-              <div id="custom-search-input">
-                  <div class="input-group col-md-12">
-                      <input id="search_input" type="text" class="form-control input-lg" placeholder="Buscar" />
-                      <span class="input-group-btn">
-                          <button class="btn btn-info btn-lg" type="button" href="/medicos">
-                              <i class="glyphicon glyphicon-search"></i>
-                          </button>
-                      </span>
-                  </div>
+          <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#home">Todos</a></li>
+              <li><a data-toggle="tab" href="#menu1">Médicos</a></li>
+              <li><a data-toggle="tab" href="#menu2">Centros Médicos</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+              <div id="todos" class="tab-content current">
+                @if ($users)
+                    @foreach ($users as $user)
+                      <article><a href="{{ url('/medico') . '/' . $user->id }}">{{ $user->name }}</a></article>
+                    @endforeach
+                @else
+                   <p>No se encontraron resultados</p>
+                @endif
               </div>
             </div>
-            <div class="col-md-4">
-
+            <div id="menu1" class="tab-pane fade">
+              <div id="medicos" class="tab-content">
+                @if ($users)
+                    @foreach ($users as $user)
+                      <article><a href="{{ url('/medico') . '/' . $user->id }}">{{ $user->name }}</a></article>
+                    @endforeach
+                @else
+                   <p>No se encontraron resultados</p>
+                @endif
+              </div>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+              <div id="centro_medico" class="tab-content">
+                @if (false)
+                    @foreach ($centros as $centro)
+                      <article><a href="{{ url('/medico') . '/' . $centro->id }}">{{ $centro->name }}</a></article>
+                    @endforeach
+                @else
+                   <p>No se encontraron resultados</p>
+                @endif
+             </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-xs-12">
-        <div class="row">
-          <div id="custom-search-filters">
-            <div class="container">
-    	         <ul class="tabs">
-    		        <li class="tab-link current" data-tab="todos">Todos</li>
-    		        <li class="tab-link" data-tab="medicos">Médicos</li>
-    		        <li class="tab-link" data-tab="centro_medico">Centros Médicos</li>
-    	         </ul>
-
-  	           <div id="todos" class="tab-content current">
-                 @if ($users)
-                   <ul>
-                     @foreach ($users as $user)
-                       <li><a href="{{ url('/medico') . '/' . $user->id }}">{{ $user->name }}</a></li>
-                     @endforeach
-                   </ul>
-                 @else
-                    <p>No se encontraron resultados</p>
-                 @endif
-               </div>
-  	           <div id="medicos" class="tab-content">
-                 @if ($users)
-                   <ul>
-                     @foreach ($users as $user)
-                       <li><a href="{{ url('/medico') . '/' . $user->id }}">{{ $user->name }}</a></li>
-                     @endforeach
-                   </ul>
-                 @else
-                    <p>No se encontraron resultados</p>
-                 @endif
-               </div>
-  	           <div id="centro_medico" class="tab-content">
-                 @if (false)
-                   <ul>
-                     @foreach ($centros as $centro)
-                       <li><a href="{{ url('/medico') . '/' . $centro->id }}">{{ $centro->name }}</a></li>
-                     @endforeach
-                   </ul>
-                 @else
-                    <p>No se encontraron resultados</p>
-                 @endif
-               </div>
-            </div><!-- container -->
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="headerwrap">
 
       </div>
-
-
+    </div>
 
     <section id="contact" name="contact"></section>
     <div id="footerwrap">
