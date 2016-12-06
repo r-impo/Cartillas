@@ -206,9 +206,19 @@ hr {
     display: none;
 }
 
+.tab-content a:hover {
+  text-decoration: none;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 3px solid lightgrey;
+  width: 90px;
+  height: 90px;
+}
+
 #resultados {
     width: 100%;
-
 }
 
 hr {

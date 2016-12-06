@@ -24,5 +24,8 @@ class UserAvatarController extends Controller
       $avatar = $storePath .intval($profile[0]->avatar) . '.jpg';
 
       return $avatar;
+
+
+      //https://www.youtube.com/watch?v=jy2SUxx6uHc
     }
 }

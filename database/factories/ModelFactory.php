@@ -45,6 +45,6 @@ $factory->define(App\Perfil::class, function (Faker\Generator $faker) {
         'direccion' => $faker->address,
         'localidad' => $faker->city,
         'provincia' => $faker->state,
-        'avatar' => rand(1, 10),
+        'avatar' => 'default.jpg',
     ];
 });

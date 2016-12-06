@@ -236,10 +236,10 @@
             <div class="col-lg-5">
                 <h3>{{ trans('adminlte_lang::message.address') }}</h3>
                 <p>
-                    Av. Greenville 987,<br/>
-                    New York,<br/>
-                    90873<br/>
-                    United States
+                    Av. Monroe 860,<br/>
+                    Nuñez,<br/>
+                    Buenos Aires<br/>
+                    Argentina
                 </p>
             </div>
 

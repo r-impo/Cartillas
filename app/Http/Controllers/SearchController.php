@@ -24,6 +24,7 @@ class SearchController extends Controller
         ->join('perfils', 'users.id', 'perfils.user_id')
         ->where('name', 'like', "%$q%")
         ->orWhere('especialidad', 'like', "%$q%")
+        ->orWhere('localidad', 'like', "%$q%")
         ->get();
 
       return view('adminlte::layouts.medicos', [
@@ -42,6 +43,7 @@ class SearchController extends Controller
         return view('adminlte::layouts.medico', [
           'user' => $fullPerfil
         ]);
+
     }
 
 }
