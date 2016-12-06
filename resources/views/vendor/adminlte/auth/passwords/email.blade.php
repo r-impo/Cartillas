@@ -1,7 +1,7 @@
 @extends('adminlte::layouts.auth')
 
 @section('htmlheader_title')
-    Password recovery
+    Recuperación de Contraseña
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
 
         <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+            <a href="{{ url('/home') }}"><b>donde</b>Duele</a>
         </div><!-- /.login-logo -->
 
         @if (session('status'))
@@ -22,7 +22,7 @@
 
         @if (count($errors) > 0)
             <div class="alert alert-danger">
-                <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
+                <strong>Oops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -32,7 +32,7 @@
         @endif
 
         <div class="login-box-body">
-            <p class="login-box-msg">Reset Password</p>
+            <p class="login-box-msg">Reestablecer Contraseña</p>
             <form action="{{ url('/password/email') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group has-feedback">
@@ -51,7 +51,7 @@
                 </div>
             </form>
 
-            <a href="{{ url('/login') }}">Log in</a><br>
+            <a href="{{ url('/login') }}">Acceder</a><br>
             <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.registermember') }}</a>
 
         </div><!-- /.login-box-body -->

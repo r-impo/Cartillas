@@ -39,14 +39,14 @@
             </div>
             <div class="navbar-collapse collapse">
               <div class="col-sm-4 col-md-4">
-                <form class="navbar-form" role="search">
+                <div class="navbar-form" role="search">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <input id="search_input" type="text" class="form-control" placeholder="Buscar" name="q">
                     <div class="input-group-btn">
                       <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                   </div>
-                </form>
+                </div>
               </div>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
