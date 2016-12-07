@@ -1,5 +1,6 @@
 #medicos-container {
   min-height: 100vh;
+  background: #fff;
   padding-top: 2em;
 }
 
@@ -11,6 +12,10 @@
     padding-top: .5em;
 }
 
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #3bc492;
+    background-color: #f2f2f2;
+}
 
 .todosMedicos {
   margin-bottom: 1em;
@@ -46,11 +51,15 @@
   text-decoration: none;
 }
 
+.medico-img {
+    text-align: center;
+}
+
 .avatar {
-  border-radius: 50%;
-  border: 1px solid #aaa;
-  max-width: 120px;
-  height: auto;
+    border-radius: 50%;
+    border: 2px solid #eee;
+    max-width: 120px;
+    height: auto;
 }
 
 #resultados {
@@ -59,4 +68,18 @@
 
 hr {
   margin-top: -10px;
+}
+
+@media (max-width: 768px) {
+  .medico-view {
+    padding: 0 3em;
+  }
+  .medico-img {
+    margin-bottom: 1em;
+    text-align: left;
+  }
+  .medico-telefono,
+    .medico-mail {
+      margin-top: .5em;
+    }
 }
