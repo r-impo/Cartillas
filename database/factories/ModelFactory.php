@@ -41,10 +41,13 @@ $factory->define(App\Perfil::class, function (Faker\Generator $faker) {
 
     return [
         'especialidad' => $especialidad[array_rand($especialidad)],
+        'experiencia' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                          ullamco laboris nisi ut aliquip ex ea',
         'obra_social' => $obra_social[array_rand($obra_social)],
         'direccion' => $faker->address,
         'localidad' => $faker->city,
         'provincia' => $faker->state,
-        'avatar' => 'default.jpg',
+        'avatar' => rand(1, 100),
     ];
 });

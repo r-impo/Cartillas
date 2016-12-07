@@ -16,6 +16,7 @@ class CreatePerfilsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('especialidad');
+            $table->text('experiencia');
             $table->string('obra_social');
             $table->string('direccion');
             $table->string('localidad');
