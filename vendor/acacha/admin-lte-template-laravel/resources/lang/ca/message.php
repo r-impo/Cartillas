@@ -24,7 +24,7 @@ return [
     'conditions'              => 'Termes i Condicións',
     'register'                => 'Registre',
     'login'                   => 'Iniciar Sessió',
-    'membership'              => 'Ja sóc membre',
+    'membreship'              => 'Ja sóc membre',
     'passwordclickreset'      => 'Feu clic aquí per restablir la contrasenya:',
     'signGithub'              => 'Entra amb Github',
     'signFacebook'            => 'Entra amb Facebook',

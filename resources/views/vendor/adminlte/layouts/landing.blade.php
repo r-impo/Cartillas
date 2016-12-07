@@ -259,6 +259,7 @@
                         <textarea class="form-control" name="Message" rows="3"></textarea>
                     </div>
                     <br>
+                    {{ csrf_field() }}
                     <button type="submit" class="btn btn-large btn-success">{{ trans('adminlte_lang::message.submit') }}</button>
                 </form>
             </div>

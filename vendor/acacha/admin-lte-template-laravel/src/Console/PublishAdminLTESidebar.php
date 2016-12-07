@@ -4,9 +4,6 @@ namespace Acacha\AdminLTETemplateLaravel\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use League\Flysystem\Adapter\Local as LocalAdapter;
-use League\Flysystem\Filesystem as Flysystem;
-use League\Flysystem\MountManager;
 
 /**
  * Class PublishAdminLTESidebar.
@@ -14,7 +11,7 @@ use League\Flysystem\MountManager;
 class PublishAdminLTESidebar extends Command
 {
     use Installable;
-    
+
     /**
      * The filesystem instance.
      *
@@ -32,7 +29,8 @@ class PublishAdminLTESidebar extends Command
      *
      * @var string
      */
-    protected $description = 'Publish Acacha adminlte sidebar view in your project allowing you to customize your project sidebar';
+    protected $description =
+        'Publish Acacha adminlte sidebar view in your project allowing you to customize your project sidebar';
 
     /**
      * Force overwrite of files.
@@ -63,7 +61,6 @@ class PublishAdminLTESidebar extends Command
         $this->publishSidebarView();
     }
 
-
     /**
      * Install views.
      */
@@ -71,7 +68,7 @@ class PublishAdminLTESidebar extends Command
     {
         $this->install(\Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::sidebarView());
     }
-   
+
     /**
      * Process options before running command.
      */

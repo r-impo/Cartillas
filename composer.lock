@@ -9,30 +9,37 @@
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
-            "version": "3.1.8",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acacha/adminlte-laravel.git",
-                "reference": "c88c8bae9ffe9c43609b64e88d788dff0ec658c2"
+                "reference": "14318e4a9410533b03d64079ccf73da66923c707"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acacha/adminlte-laravel/zipball/c88c8bae9ffe9c43609b64e88d788dff0ec658c2",
-                "reference": "c88c8bae9ffe9c43609b64e88d788dff0ec658c2",
+                "url": "https://api.github.com/repos/acacha/adminlte-laravel/zipball/14318e4a9410533b03d64079ccf73da66923c707",
+                "reference": "14318e4a9410533b03d64079ccf73da66923c707",
                 "shasum": ""
             },
             "require": {
-                "acacha/user": "~0.1",
+                "acacha/helpers": "~0.1",
+                "acacha/user": "~0.2",
                 "creativeorange/gravatar": "~1.0",
                 "illuminate/console": "~5.0",
                 "illuminate/support": "~5.0",
                 "league/flysystem": "^1.0",
-                "php": ">=5.4.0"
+                "php": "~5.6|~7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0||~5.0",
+                "squizlabs/php_codesniffer": "^2.3"
             },
             "type": "package",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Acacha\\AdminLTETemplateLaravel\\": "src"
@@ -50,8 +57,10 @@
                 }
             ],
             "description": "AdminLTE template applied to Laravel Scaffolding",
+            "homepage": "https://github.com/acacha/adminlte-laravel",
             "keywords": [
                 "AdminLTE",
+                "acacha",
                 "admin",
                 "admin-lte",
                 "administrator",
@@ -60,7 +69,60 @@
                 "template",
                 "theme"
             ],
-            "time": "2016-11-20 18:59:34"
+            "time": "2016-12-07 17:08:47"
+        },
+        {
+            "name": "acacha/helpers",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/acacha/helpers.git",
+                "reference": "2628bc8ede26fc3fd52bdd5c333cf2bb911a5945"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/acacha/helpers/zipball/2628bc8ede26fc3fd52bdd5c333cf2bb911a5945",
+                "reference": "2628bc8ede26fc3fd52bdd5c333cf2bb911a5945",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~5.6|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0||~5.0",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergi Tur Badenas",
+                    "email": "sergiturbadenas@gmail.com",
+                    "homepage": "https://github.com/acacha",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Extra helpers for Laravel",
+            "homepage": "https://github.com/acacha/helpers",
+            "keywords": [
+                "acacha",
+                "helpers",
+                "laravel"
+            ],
+            "time": "2016-12-07 14:12:12"
         },
         {
             "name": "acacha/user",

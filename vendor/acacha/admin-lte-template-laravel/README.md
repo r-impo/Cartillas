@@ -13,6 +13,7 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 [![Build Status](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/build-status/master)
 [![StyleCI](https://styleci.io/repos/35628567/shield)](https://styleci.io/repos/35628567)
 [![Build Status](https://travis-ci.org/acacha/adminlte-laravel.svg?branch=master)](https://travis-ci.org/acacha/adminlte-laravel)
+[![Dependency Status](https://www.versioneye.com/user/projects/58483fc98c5dae004be97d36/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58483fc98c5dae004be97d36)
 
 # Installation & use
 
@@ -252,6 +253,46 @@ https://github.com/almasaeed2010/AdminLTE
 
 Adminlte-laravel supports global recognized avatar (http://gravatar.com) using package creativeorange/gravatar (https://github.com/creativeorange/gravatar).
 
+# Artisan Commands
+
+## adminlte:publish | adminlte-laravel:publish
+
+This command is already executed during installation using acacha/llum but you can execute manually with:
+
+```bash
+php artisan adminlte:publish
+```
+
+Publish all necessary files from package to Laravel project.
+
+## adminlte:sidebar | adminlte-laravel:sidebar
+
+Only publish package sidebar to Laravel project allowing to customize sidebar:
+
+```bash
+php artisan adminlte:sidebar
+```
+
+## adminlte-laravel:admin | adminlte:admin
+
+Executes make:adminUserSeeder artisan command (see next section) an executes seed. This command adds a default admin user to database.
+
+```bash
+php artisan adminlte:admin
+File /home/sergi/Code/AdminLTE/acacha/adminlte-laravel_test/database/seeds/AdminUserSeeder.php created
+User Sergi Tur Badenas(sergiturbadenas@gmail.com) with the environemnt password (env var ADMIN_PWD) created succesfully!
+```
+
+### make:adminUserSeeder
+
+Create a new seed to add admin user to database. Use:
+
+```bash
+php artisan make:adminUserSeeder
+File /home/sergi/Code/AdminLTE/acacha/adminlte-laravel_test/database/seeds/AdminUserSeeder.php created
+```
+
+
 # Roadmap
 
 - Implement Facebook, Google and maybe twitter and github Login with Socialite
@@ -305,20 +346,6 @@ php artisan vendor:publish --tag=adminlte_lang --force
 
 The following languages are supported by default on this package: English, Catalan,Spanish and Brazilian Portuguese. Please feel free to submit a new pull request with another languages if you wish.
 
-## Artisan commands
-
-You can publish sidebar partial view to customize your projects sidebar
-
-```php
-$ php artisan adminlte:sidebar
-```
-
-Or you could overwrite/install or resources and apply changes to whole project with:
-
-```php
-$ php artisan adminlte:publish
-```
-
 ## Troubleshooting
 
 ### GNU sed on MAC OS
@@ -350,6 +377,48 @@ Instead of default path of BSD sed (installed by default on MAC OS):
 
 More info at https://github.com/acacha/adminlte-laravel/issues/58
 
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Testing
+
+``` bash
+$ composer test
+```
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+
+## Security
+
+If you discover any security related issues, please email :author_email instead of using the issue tracker.
+
+## Credits
+
+- [:author_name][link-author]
+- [All Contributors][link-contributors]
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
 ## See also
 
 https://github.com/acacha/adminlte-laravel-installer
+
+[ico-version]: https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/:vendor/:package_name/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/:vendor/:package_name.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/:vendor/:package_name.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/:vendor/:package_name.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/:vendor/:package_name
+[link-travis]: https://travis-ci.org/:vendor/:package_name
+[link-scrutinizer]: https://scrutinizer-ci.com/g/:vendor/:package_name/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/:vendor/:package_name
+[link-downloads]: https://packagist.org/packages/:vendor/:package_name
+[link-author]: https://github.com/:author_username
+[link-contributors]: ../../contributors
