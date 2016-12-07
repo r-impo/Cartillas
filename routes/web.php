@@ -21,4 +21,4 @@ Route::get('/medico/{id}', 'SearchController@getUser');
 //AVATAR
 Route::get('/avatar/{id}', 'UserAvatarController@get');
 //EMAIL
-Route::post('/contact', 'ContactController@sendMsg');
+Route::post('/contacto', 'ContactController@sendMsg');

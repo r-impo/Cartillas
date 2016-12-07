@@ -8,8 +8,6 @@ use League\Flysystem\MountManager;
 
 /**
  * Class Installable.
- * 
- * @package Acacha\AdminLTETemplateLaravel\Console
  */
 trait Installable
 {
@@ -113,7 +111,7 @@ trait Installable
     {
         $from = str_replace(base_path(), '', realpath($from));
         $to = str_replace(base_path(), '', realpath($to));
-        $this->line('<info>Copied '.$type.'</info> <comment>['.$from.']</comment> <info>To</info> <comment>['.$to.']</comment>');
+        $this->line('<info>Copied '. $type. '</info> <comment>['. $from.
+            ']</comment> <info>To</info> <comment>['.$to.']</comment>');
     }
-
 }

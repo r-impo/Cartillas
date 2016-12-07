@@ -1,6 +1,0 @@
-/vendor/
-/.idea
-composer.lock
-.php_cs.cache
-/sandbox/
-/node_modules/
