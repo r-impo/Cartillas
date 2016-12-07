@@ -45,7 +45,7 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('Usted está recibiendo este mensaje porque recibimos un pedido para reestablecer la contraseña Haga click
+            ->line('Usted está recibiendo este mensaje porque recibimos un pedido para reestablecer la contraseña. Haga click
             en el botón para reestablecerla.')
             ->action('Reestablecer Contraseña', url('password/reset', $this->token))
             ->line('Si usted no pidió reestablecer la contraseña simplemente ignore este mensaje.');
