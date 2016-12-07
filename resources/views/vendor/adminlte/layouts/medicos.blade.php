@@ -30,7 +30,7 @@
                       <article class="row todosMedicos">
                         <div class="col-sm-2"></div>
                         <div class="col-sm-2 todosMedicos-1">
-                          <img class="avatar" src="{{ url('/storage') . '/' . $user->avatar }}" alt="" >
+                          <img class="avatar" src="{{ url('/storage') . '/' . $user->avatar . '.jpg' }}" alt="" >
                         </div>
                         <div class="col-sm-5 todosMedicos-2">
                           <a href="{{ url('/medico') . '/' . $user->id }}" class="">{{ $user->name }}</a>
@@ -55,7 +55,7 @@
                     <article class="row todosMedicos">
                       <div class="col-sm-2"></div>
                       <div class="col-sm-2 todosMedicos-1">
-                        <img class="avatar" src="{{ url('/storage') . '/' . $user->avatar }}" alt="" >
+                        <img class="avatar" src="{{ url('/storage') . '/' . $user->avatar . '.jpg' }}" alt="" >
                       </div>
                       <div class="col-sm-5 todosMedicos-2">
                         <a href="{{ url('/medico') . '/' . $user->id }}" class="">{{ $user->name }}</a>

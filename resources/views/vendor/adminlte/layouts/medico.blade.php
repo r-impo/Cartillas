@@ -23,7 +23,7 @@
           </div>
           <div class="row centered">
             <div class="col-md-offset-1 col-md-4">
-              <img src="{{ url('/storage') . '/' . $user[0]->avatar }}" alt="">
+              <img src="{{ url('/storage') . '/' . $user[0]->avatar . '.jpg' }}" alt="">
             </div>
             <div class="col-md-7">
               <div class="row">
