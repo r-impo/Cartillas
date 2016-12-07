@@ -40,6 +40,7 @@
                     @else
                         <li><a href="/home">{{ Auth::user()->name }}</a></li>
                     @endif
+                        <li><a href="#contact">Registrarse</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -47,9 +48,41 @@
 
     <section id="content" name="contact"></section>
       <div class="headerwrap">
-        @if ($user)
-          {{ $user }}
-        @endif
+        <div class="container">
+          <div class="row centered">
+            <div class="col-xs-12">
+              <h1>{{ $user[0]->name }}</h1>
+            </div>
+          </div>
+          <div class="row centered">
+            <div class="col-md-offset-1 col-md-4">
+              <img src="{{ url('/storage') . '/' . $user[0]->avatar }}" alt="">
+            </div>
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-xs-8">
+                  <h4 class="pull-left">Especialidad: {{ $user[0]->especialidad }}</h4>
+                </div>
+                <div class="col-xs-4">
+                  <h4 class="pull-right">aca va el rating</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <p class="pull-left">Experiencia:{{-- $user[0]->experiencia --}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6">
+                  <button class="btn btn-success" type="button" name="telefono" onClick="telefono()">Llamar</button>
+                </div>
+                <div class="col-xs-6">
+                  <button class="btn btn-success" type="button" name="email" onClick="email()">Enviar e-mail</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     <section id="contact" name="contact"></section>
@@ -87,6 +120,8 @@
             </div>
         </div>
     </div>
+
+    <button type="button" id="scroll_up" class="btn btn-warning hidden"><a class="btn" href="#content">Subir</a></button>
 </div>
 
 <!-- Bootstrap core JavaScript
@@ -100,6 +135,18 @@
     $('.carousel').carousel({
         interval: 3500
     })
+    $(window).scroll(function() {
+      if($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
+        $('#scroll_up').removeClass('hidden');
+      }
+    });
+
+    function telefono() {
+      console.log("mostrar telefono");
+    }
+    function email() {
+      console.log("mostrar email");
+    }
 </script>
 </body>
 </html>
