@@ -35,8 +35,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#home" class="smoothScroll">Buscar Profesional</a></li>
-                    <li><a href="#showcase" class="smoothScroll">Nosotros</a></li>
-                    <li><a href="#desc" class="smoothScroll">Preguntas Frecuentes</a></li>
+                    <li><a href="#desc" class="smoothScroll">Servicios</a></li>
+                    <li><a href="#features" class="smoothScroll">Preguntas Frecuentes</a></li>
                     <li><a href="#contact" class="smoothScroll">Contacto</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
