@@ -115,7 +115,6 @@
                 </div>
             </div>
             <br>
-            <hr>
         </div> <!--/ .container -->
     </div><!--/ #introwrap -->
 
