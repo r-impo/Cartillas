@@ -3,6 +3,60 @@
   padding-top: 2em;
 }
 
+#medicos-container div {
+  background: #fff;
+}
+
 .tab-content {
     padding-top: .5em;
+}
+
+
+.todosMedicos {
+  margin-bottom: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+  border-bottom: 1px dotted #ddd;
+}
+
+.todosMedicos:last-child {
+  border-bottom: none;
+}
+
+.todosMedicos-1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.todosMedicos-2,
+.todosMedicos-3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.todosMedicos-2 p,
+  .todosMedicos-2 a  {
+  margin: 0;
+}
+
+.tab-content a:hover {
+  text-decoration: none;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  max-width: 120px;
+  height: auto;
+}
+
+#resultados {
+    width: 100%;
+}
+
+hr {
+  margin-top: -10px;
 }

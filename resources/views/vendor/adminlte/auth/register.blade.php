@@ -10,7 +10,7 @@
     <div id="app">
         <div class="register-box">
             <div class="register-logo">
-                <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+                <a href="{{ url('/home') }}"><b>donde</b>Duele</a>
             </div>
 
             @if (count($errors) > 0)
@@ -56,7 +56,7 @@
                         </div><!-- /.col -->
                         <div class="col-xs-6">
                             <div class="form-group">
-                                <button type="button" class="btn btn-block btn-flat" data-toggle="modal" data-target="#termsModal">{{ trans('adminlte_lang::message.terms') }}</button>
+                                <button type="button" class="btn btn-flat" data-toggle="modal" data-target="#termsModal">{{ trans('adminlte_lang::message.conditions') }}</button>
                             </div>
                         </div><!-- /.col -->
                         <div class="col-xs-4 col-xs-push-1">
@@ -65,9 +65,9 @@
                     </div>
                 </form>
 
-                @include('adminlte::auth.partials.social_login')
+                {{-- @include('adminlte::auth.partials.social_login') --}}
 
-                <a href="{{ url('/login') }}" class="text-center">{{ trans('adminlte_lang::message.membreship') }}</a>
+                <a href="{{ url('/login') }}" class="text-center">{{ trans('adminlte_lang::message.membership') }}</a>
             </div><!-- /.form-box -->
         </div><!-- /.register-box -->
     </div>
