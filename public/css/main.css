@@ -136,7 +136,7 @@ hr {
 #headerwrap p {
     margin: 0;
     text-align: left;
-    color: white
+    color: white;
 }
 
 #custom-search-input{
@@ -204,25 +204,6 @@ hr {
 
 .container-resultados .hidden{
     display: none;
-}
-
-.tab-content a:hover {
-  text-decoration: none;
-}
-
-.avatar {
-  border-radius: 50%;
-  border: 3px solid lightgrey;
-  width: 90px;
-  height: 90px;
-}
-
-#resultados {
-    width: 100%;
-}
-
-hr {
-  margin-top: -10px;
 }
 
 /* intro Wrap */
