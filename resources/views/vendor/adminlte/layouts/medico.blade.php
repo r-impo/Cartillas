@@ -41,10 +41,10 @@
               </div>
               <div class="row">
                 <div class="col-xs-6">
-                  <button class="btn btn-success" type="button" name="telefono" onClick="telefono()">Llamar</button>
+                  <a href="tel:{{ $user[0]->telefono }}"><i class="fa fa-phone" aria-hidden="true"></i>Ver teléfono</a>
                 </div>
                 <div class="col-xs-6">
-                  <button class="btn btn-success" type="button" name="email" onClick="email()">Enviar e-mail</button>
+                  <a href="mailto:{{ $user[0]->email }}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Ver mail</a>
                 </div>
               </div>
             </div>
