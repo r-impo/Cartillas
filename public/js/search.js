@@ -29,9 +29,6 @@ function showUser(str) {
             }
         };
         xmlhttp.open("GET", "search/"+str, true);
-        if (window.location !== '/') { // FIX PARA QUE EL AJAX SOLO CORRA EN EL LANDING PAGE
-          return false;
-        }
         xmlhttp.send();
     }
 }
