@@ -55,7 +55,9 @@ function showSearchResults(results) {
 
       target.append($('<a />', {"class": "row", "href": "/medico/" + user.id}).append(medico, especialidad, localidad));
       target.append('<hr>');
+
     }
+    $('#resultados_parent hr:last-child').remove();
     $('#resultados_parent').removeClass('hidden');
   }
 
