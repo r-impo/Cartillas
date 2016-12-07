@@ -3,7 +3,7 @@
 <head>
 
   @include('adminlte::layouts.partials.links')
-
+  <link rel="stylesheet" href="{{ asset('css/stars.css') }}">
 </head>
 
 <body data-spy="scroll" data-offset="0" data-target="#navigation">
@@ -31,12 +31,12 @@
                   <h4 class="pull-left">Especialidad: {{ $user[0]->especialidad }}</h4>
                 </div>
                 <div class="col-xs-4">
-                  <h4 class="pull-right">aca va el rating</h4>
+                  <h4 class="pull-right"><span class="stars">{{ $user[0]->rating }}</span></h4>
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-12">
-                  <p class="pull-left">Experiencia:{{-- $user[0]->experiencia --}}</p>
+                  <p class="pull-left">Experiencia: {{ $user[0]->experiencia }}</p>
                 </div>
               </div>
               <div class="row">
@@ -62,20 +62,18 @@
 @include('adminlte::layouts.partials.scriptsApp')
 
 <script>
-    $('.carousel').carousel({
-        interval: 3500
-    })
-    $(window).scroll(function() {
-      if($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
-        $('#scroll_up').removeClass('hidden');
-      }
+    $(document).ready(function() {
+        $('span.stars').stars();
     });
 
-    function telefono() {
-      console.log("mostrar telefono");
-    }
-    function email() {
-      console.log("mostrar email");
+    $('.carousel').carousel({
+        interval: 3500
+    });
+
+    $.fn.stars = function() {
+      return $(this).each(function() {
+        $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
+      });
     }
 </script>
 </body>

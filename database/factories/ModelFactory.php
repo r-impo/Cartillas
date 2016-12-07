@@ -49,5 +49,7 @@ $factory->define(App\Perfil::class, function (Faker\Generator $faker) {
         'localidad' => $faker->city,
         'provincia' => $faker->state,
         'avatar' => rand(1, 20),
+        'telefono' => '011 5263-7400',
+        'rating' => rand(1, 5),
     ];
 });

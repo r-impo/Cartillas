@@ -3,6 +3,7 @@
 <head>
 
   @include('adminlte::layouts.partials.links')
+  <link rel="stylesheet" href="{{ asset('css/stars.css') }}">
 
 </head>
 
@@ -17,9 +18,9 @@
 
         <div class="container">
           <ul class="nav nav-tabs">
-              <li class="active"><a data-toggle="tab" href="#home">Todos</a></li>
-              <li><a data-toggle="tab" href="#menu1">Médicos</a></li>
-              <li><a data-toggle="tab" href="#menu2">Centros Médicos</a></li>
+              <li class="active"><a data-toggle="tab" href="#home">Todos ({{ count($users) }}) </a></li>
+              <li><a data-toggle="tab" href="#menu1">Médicos ({{ count($users) }}) </a></li>
+              <li><a data-toggle="tab" href="#menu2">Centros Médicos (0)</a></li>
           </ul>
 
           <div class="tab-content">
@@ -38,13 +39,14 @@
                           <p><i class="fa fa-map-marker" aria-hidden="true"></i>{{ $user->direccion }}</p>
                         </div>
                         <div class="col-sm-3 todosMedicos-3">
-                          <a><i class="fa fa-phone" aria-hidden="true"></i>Ver teléfono</a>
-                          <a><i class="fa fa-envelope-o" aria-hidden="true"></i>Ver mail</a>
+                          <a href="tel:{{ $user->telefono }}"><i class="fa fa-phone" aria-hidden="true"></i>Ver teléfono</a>
+                          <a href="mailto:{{ $user->email }}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Ver mail</a>
+                          <span class="stars">{{ $user->rating }}</span>
                         </div>
                       </article>
                     @endforeach
                 @else
-                   <p>No se encontraron resultados</p>
+                   <p>No se encontraron resultados.</p>
                 @endif
               </div>
             </div>
@@ -69,7 +71,7 @@
                     </article>
                   @endforeach
                 @else
-                   <p>No se encontraron resultados</p>
+                   <p>No se encontraron resultados.</p>
                 @endif
               </div>
             </div>
@@ -80,7 +82,7 @@
                       <article><a href="{{ url('/medico') . '/' . $centro->id }}">{{ $centro->name }}</a></article>
                     @endforeach
                 @else
-                   <p>No se encontraron resultados</p>
+                   <p>No se encontraron resultados.</p>
                 @endif
              </div>
             </div>
@@ -99,9 +101,19 @@
 @include('adminlte::layouts.partials.scriptsApp')
 
 <script>
+    $(document).ready(function() {
+        $('span.stars').stars();
+    });
+
     $('.carousel').carousel({
         interval: 3500
     })
+
+    $.fn.stars = function() {
+      return $(this).each(function() {
+        $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
+      });
+    }
 </script>
 </body>
 </html>
