@@ -109,7 +109,7 @@ hr {
    }
 
 #headerwrap {
-    background: url(../img/dondeduele-corpo.jpg) no-repeat center 51px fixed;
+    background: url(../img/dondeduele-corpo.jpg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -231,6 +231,10 @@ hr {
     font-size: 20px;
 }
 
+#features img {
+  margin: 0 auto;
+}
+
 /* Showcase Wrap */
 
 #showcase {
@@ -272,4 +276,10 @@ hr {
 
 #c p {
     color: white
+}
+
+@media(max-width: @screen-xs-max){
+  #features img {
+    width: 50%;
+  }
 }

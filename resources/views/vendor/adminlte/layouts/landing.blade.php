@@ -126,7 +126,7 @@
                 <br>
                 <br>
                 <div class="col-lg-6 centered">
-                    <img class="centered" src="{{ asset('/img/mobile.png') }}" alt="">
+                    <img class="img-responsive" src="{{ asset('/img/mobile.png') }}" alt="">
                 </div>
 
                 <div class="col-lg-6">
