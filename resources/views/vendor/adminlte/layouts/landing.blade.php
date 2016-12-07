@@ -245,7 +245,7 @@
             <div class="col-lg-7">
                 <h3>{{ trans('adminlte_lang::message.dropus') }}</h3>
                 <br>
-                <form role="form" action="#" method="post" enctype="plain">
+                <form role="form" action="/contacto" method="post" enctype="plain">
                     <div class="form-group">
                         <label for="name1">{{ trans('adminlte_lang::message.yourname') }}</label>
                         <input type="name" name="Name" class="form-control" id="name1" placeholder="{{ trans('adminlte_lang::message.yourname') }}">
