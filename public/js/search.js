@@ -13,11 +13,7 @@ $(document).ready(function() {
 
 function showUser(str) {
     if (str == "") {
-        $('#resultados_medico').html('');
-        $('#resultados_especialidad').html('');
-        $('#resultados_localidad').html('');
-        $('#resultados_parent').addClass('hidden');
-        return;
+        resetDisplay();
     } else {
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -33,9 +29,19 @@ function showUser(str) {
     }
 }
 
+function resetDisplay() {
+  $('#resultados_medico').html('');
+  $('#resultados_especialidad').html('');
+  $('#resultados_localidad').html('');
+  $('#resultados_parent').addClass('hidden');
+}
+
 function showSearchResults(results) {
   let users = JSON.parse(results);
   console.log(users);
+  if (users.length < 1) {
+      resetDisplay();
+  }
   let target = $('#resultados_parent');
 
   if (target.children().length > 1) {

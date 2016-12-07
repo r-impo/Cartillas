@@ -73,7 +73,7 @@
           <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
               <div id="todos" class="tab-content current">
-                @if ($users)
+                @if (count($users) > 0)
                     @foreach ($users as $user)
                       <a href="{{ url('/medico') . '/' . $user->id }}" class="search_results">
                         <img class="avatar" src="{{ url('/storage') . '/' . $user->avatar }}" alt="" >
@@ -89,7 +89,7 @@
             </div>
             <div id="menu1" class="tab-pane fade">
               <div id="medicos" class="tab-content">
-                @if ($users)
+                @if (count($users) > 0)
                     @foreach ($users as $user)
                       <article><a href="{{ url('/medico') . '/' . $user->id }}">{{ $user->name }}</a></article>
                     @endforeach
