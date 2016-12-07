@@ -14,9 +14,11 @@
 Route::get('/', function () {
     return view('adminlte::layouts.landing');
 });
-
+//SEARCH
 Route::get('/medicos/{str}', 'SearchController@getAllUsers');
 Route::get('/search/{str}', 'SearchController@getSearchUsers');
 Route::get('/medico/{id}', 'SearchController@getUser');
-
+//AVATAR
 Route::get('/avatar/{id}', 'UserAvatarController@get');
+//EMAIL
+Route::post('/contact', 'ContactController@sendMsg');
