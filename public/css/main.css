@@ -61,9 +61,27 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #8c8c8c;
+    border-top: 1px dotted #8c8c8c;
     margin: 0;
     padding: 0;
+}
+
+.medico-view {
+  margin: 3em auto;
+}
+
+.medico-name,
+    .medico-experiencia,
+      .medico-mail {
+  margin: 0;
+}
+
+.medico-rating {
+  margin: 0 0 .25em;
+}
+
+.medico-telefono {
+  margin-right: .5em;
 }
 
 
@@ -276,6 +294,12 @@ hr {
 
 #c p {
     color: white
+}
+
+@media(max-width: @screen-sm-max){
+  .medico-img {
+      text-align: left;
+  }
 }
 
 @media(max-width: @screen-xs-max){

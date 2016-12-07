@@ -15,40 +15,40 @@
 
     <section id="content" name="contact"></section>
       <div class="headerwrap">
-        <div class="container">
-          <div class="row centered">
-            <div class="col-xs-12">
-              <h1>{{ $user[0]->name }}</h1>
+        <div class="container medico-view">
+
+          <div class="row">
+
+            <div class="col-sm-2 medico-img">
+              <img class="avatar" src="{{ url('/storage') . '/' . $user[0]->avatar . '.jpg' }}" alt="">
             </div>
-          </div>
-          <div class="row centered">
-            <div class="col-md-offset-1 col-md-4">
-              <img src="{{ url('/storage') . '/' . $user[0]->avatar . '.jpg' }}" alt="">
-            </div>
-            <div class="col-md-7">
+
+            <div class="col-sm-10">
+
               <div class="row">
-                <div class="col-xs-8">
-                  <h4 class="pull-left">Especialidad: {{ $user[0]->especialidad }}</h4>
-                </div>
-                <div class="col-xs-4">
-                  <h4 class="pull-right"><span class="stars">{{ $user[0]->rating }}</span></h4>
-                </div>
-              </div>
-              <div class="row">
+
                 <div class="col-xs-12">
-                  <p class="pull-left">Experiencia: {{ $user[0]->experiencia }}</p>
+                  <h1 class="medico-name">{{ $user[0]->name }}</h1>
+                </div>
+                <div class="col-xs-12">
+                  <h4 class="pull-left medico-especialidad">Especialidad: {{ $user[0]->especialidad }}</h4>
+                </div>
+                <div class="col-xs-12">
+                  <h4 class="pull-left medico-rating"><span class="stars">{{ $user[0]->rating }}</span></h4>
+                </div>
+                <div class="col-xs-12">
+                  <p class="pull-left medico-experiencia">Experiencia: {{ $user[0]->experiencia }}</p>
+                </div>
+                <div class="col-xs-12">
+                  <a class="medico-telefono" href="tel:{{ $user[0]->telefono }}"><i class="fa fa-phone" aria-hidden="true"></i>Ver teléfono</a>
+                  <a class="medico-mail" href="mailto:{{ $user[0]->email }}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Ver mail</a>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-xs-6">
-                  <a href="tel:{{ $user[0]->telefono }}"><i class="fa fa-phone" aria-hidden="true"></i>Ver teléfono</a>
-                </div>
-                <div class="col-xs-6">
-                  <a href="mailto:{{ $user[0]->email }}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Ver mail</a>
-                </div>
-              </div>
+
             </div>
+
           </div>
+
         </div>
       </div>
 
