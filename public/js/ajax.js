@@ -1,109 +1,60 @@
-//#################################################
-//
-//               NO FUNCIONA!
-//
-// ################################################
-let ajax, results;
+let resultParent = $('#resultados_parent');
+let resultColumns = [$('#resultados_medico'), $('#resultados_especialidad'), $('#resultados_localidad')];
 
-$(document).ready(function() {
-  ajax = new Ajax();
-  results = new Results();
-
-  $('#search_input').keyup(function() {
-    clearTimeout($.data(this, 'timer'));
-    var wait = setTimeout(ajax.request($(this).val()), 500);
-    $(this).data('timer', wait);
-  });
-  $("#search_input").keypress(function(e) {
-    if(e.which == 13 && $("#search_input").is(":focus")) {
-      window.location = '/medicos/' + $(this).val();
-    }
-  });
-});
-
-function Ajax() {
-  this.xmlhttp;
-  this.result;
-
-  this.request = function(str) {
+function ajaxRequest(request) {
+  if (request == "") {
+    resetResultsDisplay();
+  }
+  else {
     if (window.XMLHttpRequest) {
-      this.xmlhttp = new XMLHttpRequest();
-      this.listen();
-      this.xmlhttp.open("GET", "search/"+str, true);
-      this.xmlhttp.send();
-    }
-  }
-
-  this.listen = function() {
-    let parse = this.parse;
-    this.xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        parse(this.responseText);
+      let xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          displayResults(this.responseText);
+        }
       }
-    }
-    return;
-  }
-
-  this.parse = function(data) {
-    this.result = JSON.parse(data);
-    ajax.validate();
-  }
-
-  this.validate = function() {
-    if (result.length < 1) {
-      results.wipe();
-    } else {
-      results.show(this.result);
+      xmlhttp.open("GET", "search/"+request, true);
+      xmlhttp.send();
     }
   }
 }
 
-function Results() {
-  this.openP = '<p class="col-xs-4">';
-  this.closeP = '</p>';
+function displayResults(results) {
+  let data = JSON.parse(results);
 
-  this.columnas = {
-    medico: $('#resultados_medico'),
-    especialidad: $('#resultados_especialidad'),
-    localidad: $('#resultados_localidad')
+  if (data.length === 0) {
+      resetResultsDisplay();
+  } else {
+      resultParent.removeClass('hidden');
   }
 
-  this.parent = $('#resultados_parent');
-
-  this.wipe = function() {
-      for (columna of this.columnas) {
-        columna.html('');
-      }
-      this.parent.addClass('hidden');
+  if (resultParent.children().length >= 1) {
+    resultParent.children().remove();
   }
 
-  this.show = function(results) {
-    this.clearOld();
-    for (result of results) {
-      let medico = this.openP + this.crop(result.name) + closeP;
-      let especialidad = this.openP + this.crop(result.especialidad) + closeP;
-      let localidad = this.openP + this.crop(result.localidad) + closeP;
+  let openWrapper = '<p class="col-xs-4">',
+      closeWrapper = '</p>';
 
-      this.parent.append($('<a />', {
-        "class": "row",
-        "href": "/medico/" + result.id
-      }).append(medico, especialidad, localidad));
-    }
-    $('#resultados_parent hr:last-child').remove();
-    this.parent.removeClass('hidden');
+  for (row of data) {
+    resultParent.append($('<a />', {"class": "row", "href": "/medico/" + row.id})
+                  .append(openWrapper + cropResults(row.name) + closeWrapper,
+                            openWrapper + cropResults(row.especialidad) + closeWrapper,
+                              openWrapper + cropResults(row.localidad) + closeWrapper))
+                    .append('<hr>');
   }
+  $('#resultados_parent hr:last-child').remove();
+}
 
-  this.clearOld = function() {
-    if (this.parent.children().length > 1) {
-      this.parent.children().remove();
-    }
-    return;
+function resetResultsDisplay() {
+  for (column of resultColumns) {
+    column.html('');
   }
+  resultParent.addClass('hidden');
+}
 
-  this.crop = function(str) {
-    if (str.length > 25) {
-      str = str.substring(0, 25) + "...";
-    }
-    return str;
+function cropResults(str) {
+  if (str.length > 25) {
+    str = str.substring(0, 25) + "..."
   }
+  return str;
 }
