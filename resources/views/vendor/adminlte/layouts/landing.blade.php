@@ -273,11 +273,28 @@
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('/js/smoothscroll.js') }}"></script>
 <script src="{{ asset('/js/coverr.js') }}"></script>
-<script src="{{ asset('/js/search.js') }}"></script>
+<script src="{{ asset('/js/ajax.js') }}"></script>
 <script>
     $('.carousel').carousel({
         interval: 3500
-    })
+    });
+    $(document).ready(function() {
+      // Al tipear, quitar el timeout anterior, si lo hubiese.
+      $('#search_input').keyup(function() {
+        clearTimeout($.data(this, 'timer'));
+        // Nuevo timeout. Cuando expira, hace la búsqueda con el valor del input.
+        var wait = setTimeout(ajaxRequest($(this).val()), 500);
+        $(this).data('timer', wait);
+      });
+      // Al apretar una tecla...
+      $("#search_input").keypress(function(e) {
+        // ...check si la tecla es ENTER y si el focus está en el input
+        if(e.which == 13 && $("#search_input").is(":focus")) {
+          // Redirect to /medicos/{search string}
+          window.location = '/medicos/' + $(this).val();
+        }
+      });
+    });
 </script>
 </body>
 </html>
